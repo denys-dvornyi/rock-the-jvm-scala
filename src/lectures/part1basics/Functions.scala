@@ -35,7 +35,7 @@ object Functions extends App {
 	greetingFunction("Den", 37)
 
 	def factorialFunction(n: Int): Long = {
-		if (n == 1) n
+		if (n <= 1) 1
 		else n * factorialFunction(n - 1)
 	}
 
@@ -46,14 +46,13 @@ object Functions extends App {
 		else fibonacciFunction(n - 1) + fibonacciFunction(n - 2)
 	}
 
-	println(fibonacciFunction(7))
+	println("fibonacci from 7 = " + fibonacciFunction(7))
 
 	def isPrimeNumber(n: Int): Boolean = {
 		def isPrime(t: Int): Boolean = {
 			if (t <= 1) true
 			else n % t != 0 && isPrime(t - 1)
 		}
-//		isPrime(n - 1) // test all number
 		isPrime(n / 2) // more optimized! test only half numbers
 	}
 
